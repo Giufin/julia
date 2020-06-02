@@ -42,7 +42,7 @@ Signed
 """
 function supertype(T::DataType)
     @_pure_meta
-    T.super
+    isdefined(T, :super) ? T.super : Any
 end
 
 function supertype(T::UnionAll)
